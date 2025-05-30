@@ -161,7 +161,6 @@ function actionSlideTwo() {
         }, 500);
     };
 
-    foot.addEventListener("click", onClick);
     foot.addEventListener("touchend", onClick); // 👈 добавляем это
 
 }
