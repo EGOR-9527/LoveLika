@@ -412,7 +412,7 @@ h1 {
 .footRight {
     position: absolute;
     margin-top: 11vh;
-    left: 78vw;
+    left: 70vw;
     opacity: 0;
     display: none;
 }
