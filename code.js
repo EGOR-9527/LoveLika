@@ -128,7 +128,7 @@ function typeText(element, text, startDelay = 0, perCharDelay = 55) {
     return startDelay + text.length * perCharDelay;
 }
 
-async function actionSlideTwo() {
+function actionSlideTwo() {
     slideTwo.style.display = "flex";
     textSlideTwo.textContent = "";
 
@@ -138,7 +138,9 @@ async function actionSlideTwo() {
         foot.style.opacity = "1";
     }, 3500);
 
-    foot.addEventListener("click", function () {
+    const onClick = () => {
+        numberClick = true;
+        foot.removeEventListener("click", onClick);
         setTimeout(() => {
             slideTwo.style.opacity = "0";
 
@@ -147,8 +149,11 @@ async function actionSlideTwo() {
             }, 500);
             actionSlideThree();
         }, 500);
-    });
+    };
+
+    foot.addEventListener("click", onClick);
 }
+
 
 async function actionSlideThree() {
     slideThree.style.display = "flex";
@@ -256,7 +261,7 @@ async function actionSlideFour() {
 
     setTimeout(() => {
         slideFourFinished = true;
-    }, 18000);
+    }, 15000);
 
 
     document.addEventListener("click", () => {
