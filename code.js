@@ -154,7 +154,7 @@ async function actionSlideTwo() {
                 slideTwo.style.display = "none";
             }, 500);
             if(clickHandled === true) {
-                actionSlideThree();
+                //actionSlideThree();
             }
         }, 500);
     });
