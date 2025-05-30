@@ -1,0 +1,461 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Exo2";
+    src: url("./Exo2.ttf");
+}
+
+body {
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+svg {
+    transition: all 1s;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.slideOne,
+.slideTwo,
+.slideThree,
+.slideSix {
+    transition: all 1s;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 51.60099dvh;
+}
+
+.slideNine {
+    transition: all 1s;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 38.30049dvh;
+    width: 80.39572vw;
+    height: 35.133vh;
+}
+
+.slideNine > h1 {
+    z-index: 1;
+}
+
+.slideNine > * {
+    opacity: 0;
+    position: absolute;
+}
+
+.slideFour {
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slideFive {
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    border: none;
+    background: none;
+    outline: none;
+    user-select: none;
+    text-align: center;
+    font-size: min(4.81283vw, 2.21675vh);
+}
+
+h1 {
+    transition: all 1s;
+    color: #ffffff;
+    font-size: min(4.81283vw, 2.21675vh);
+    font-family: "Exo2", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    line-height: 22px;
+}
+
+.underline-animate {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.underline-animate::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease-in-out;
+}
+
+.underline-animate.underline-show::after {
+    transform: scaleX(1);
+}
+
+
+.memories {
+    color: #728c6a;
+    font-size: min(4.81283vw, 2.21675vh);
+    margin-top: 12.31527dvh;
+}
+
+.blockNotBe {
+    margin-top: 8.94581dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blockNotBe > li {
+    transition: all 0.7s;
+    font-size: min(4.81283vw, 2.21675vh);
+    font-family: "Exo2", sans-serif;
+    margin-top: 3.32512vh;
+    color: #8c6a6a;
+}
+
+.be {
+    transition: all 0.7s;
+    font-size: min(4.81283vw, 2.21675vh);
+    color: #728c6a;
+    margin-top: 7.94581dvh;
+}
+
+.realTreasures {
+    font-size: min(4.81283vw, 2.21675vh);
+    color: #728c6a;
+    margin-top: 6.31527dvh;
+}
+
+#textSlideOne,
+#textSlideTwo,
+#textSlideThree {
+    margin-top: 1dvw;
+}
+
+.slideThree > svg {
+    width: 75.13369dvw;
+    height: 9.97537dvh;
+    margin-top: 3.06404vh;
+    filter: drop-shadow(0px 0px 40px rgba(114, 140, 106, 0.4));
+}
+
+#foot {
+    margin-top: 4.92611dvh;
+}
+
+#background-wrapper {
+    transition: all 1s;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#heartBackground {
+    transition: all 1s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#background-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9); /* уровень затемнения */
+}
+
+.title {
+    top: 6.18719vh;
+    color: #FFFF;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title > svg {
+    width: 102.13904vw;
+    height: 15.14778vh;
+    position: absolute;
+    z-index: -1;
+}
+
+.theFirstHearts {
+    top: 20.78818vh;
+    color: #FFFF;
+    position: absolute;
+
+}
+
+.heartImgOne {
+    margin-block: 4vh;
+}
+
+.slideFiveBlockImg {
+    position: absolute;
+    top: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slideFiveBlockImg > img {
+    transition: all 1s;
+}
+
+#loveCart {
+    width: 26.73797dvw;
+    height: 16.37931dvh;
+    margin-top: 10.94581dvh;
+
+}
+
+#inputPassworld {
+    padding-bottom: 0.98522dvh;
+    font-family: "Exo2", sans-serif;
+    background: none;
+    border-bottom: solid 1px #ffffff;
+    color: #ffffff;
+    margin-top: 3.03448dvh;
+    width: 61.22995dvw;
+}
+
+.butterflyOne {
+    position: absolute;
+    transition: all 3s;
+    top: 9.60591vh;
+    width: 50vw;
+    height: 50vw;
+    left: 0;
+    opacity: 0;
+
+}
+
+.youMeWorld {
+    transition: all 1s;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.butterflyTwo {
+    position: absolute;
+    transition: all 3s;
+    bottom: 3.69458vh;
+    width: 50vw;
+    height: 50vw;
+    right: 0;
+    opacity: 0;
+}
+
+#butterfliesInTheStomach {
+    color: #FFFF;
+}
+
+#promise {
+    color: #FFFF;
+    margin-top: 5vh;
+}
+
+.slideSeven {
+    transition: all 1.5s;
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-top: -5vh;
+}
+
+.slideSeven > h1 {
+    opacity: 0;
+    transition: all 1.5s;
+}
+
+.textOneslideSeven {
+    margin-bottom: 2.31527vh;
+}
+
+.textTwoslideSeven {
+    margin-top: 6.15764vh;
+}
+
+.textThreeslideSeven {
+    margin-top: 6.15764vh;
+}
+
+.textFourOneslideSeven {
+    margin-top: 6.15764vh;
+}
+
+.textFiveOneslideSeven {
+    margin-top: 7.31527vh;
+}
+
+.slideEight {
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.slideEight > * {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.everyNewNight {
+    margin-top: 5.91133vh;
+}
+
+.makesYouInMyLife {
+    margin-top: 3.69458vh;
+}
+
+.milfPhotos {
+    width: 70.70053vw;
+    height: 20.78325vh;
+    margin-top: 3.69458vh;
+}
+
+.moreAndMoreReal {
+    margin-top: 3.69458vh;
+}
+
+.DrunksAreSleeping {
+    margin-top: 3.69458vh;
+    width: 70.50053vw;
+    height: 40.10837vh;
+}
+
+.inTheNextPhoto {
+    margin-top: 3.69458vh;
+}
+
+.sometimesWordsAreUnnecessary {
+    margin-top: -10vh;
+}
+
+.slideTen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slideTen > img {
+    opacity: 0;
+}
+
+.bibaAndboba {
+    transition: all 1s;
+    width: 84.39572vw;
+    height: 26.84729vh;
+    margin-top: 5.97537vh;
+}
+
+.bibapng {
+    transition: all 1s;
+    margin-top: 4vh;
+    width: 84.39572vw;
+    height: 48.46798vh;
+}
+
+.blockFoot {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+
+.footLeft {
+    position: absolute;
+    margin-top: 7vh;
+    left: 1vw;
+    opacity: 0;
+    display: none;
+}
+
+.footRight {
+    position: absolute;
+    margin-top: 11vh;
+    left: 78vw;
+    opacity: 0;
+    display: none;
+}
+
+.slideTenText {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    margin-top: -22vh;
+}
+
+.slideTenText > h1 {
+    opacity: 0;
+    margin-top: 2vh;
+}
+
+.slideEleven {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+}
+
+.slideEleven > h1 {
+    margin-block: 2vh;
+}
+
+#starTop > svg {
+    transition: all 1s;
+    position: absolute;
+    left: 0;
+    width: 90vw;
+    height: 30vh;
+    opacity: 0;
+    display: none;
+}
+
+#starBottom > svg {
+    transition: all 1s;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    width: 96.25668vw;
+    height: 47.41379vh;
+    opacity: 0;
+    display: none;
+}
