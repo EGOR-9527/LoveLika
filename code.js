@@ -145,10 +145,11 @@ function actionSlideTwo() {
     }, 3500);
 
     const onClick = () => {
-        if (slideTwoClicked) return; // защита от повторного тапа
+        if (slideTwoClicked) return;
         slideTwoClicked = true;
 
         foot.removeEventListener("click", onClick);
+        foot.removeEventListener("touchend", onClick); // 👈 добавляем это
 
         setTimeout(() => {
             slideTwo.style.opacity = "0";
@@ -161,6 +162,8 @@ function actionSlideTwo() {
     };
 
     foot.addEventListener("click", onClick);
+    foot.addEventListener("touchend", onClick); // 👈 добавляем это
+
 }
 
 
