@@ -111,6 +111,9 @@ butterflyTwo.style.opacity = "0";
 promise.style.opacity = "0";
 youMeWorld.style.opacity = "0";
 
+let slideTwoStarted = false; // глобально
+let slideTwoClicked = false; // глобально
+
 async function hashPassworld(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);
@@ -129,6 +132,9 @@ function typeText(element, text, startDelay = 0, perCharDelay = 55) {
 }
 
 function actionSlideTwo() {
+    if (slideTwoStarted) return;
+    slideTwoStarted = true;
+
     slideTwo.style.display = "flex";
     textSlideTwo.textContent = "";
 
@@ -139,8 +145,11 @@ function actionSlideTwo() {
     }, 3500);
 
     const onClick = () => {
-        numberClick = true;
+        if (slideTwoClicked) return; // защита от повторного тапа
+        slideTwoClicked = true;
+
         foot.removeEventListener("click", onClick);
+
         setTimeout(() => {
             slideTwo.style.opacity = "0";
 
