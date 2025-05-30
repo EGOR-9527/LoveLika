@@ -144,8 +144,8 @@ async function actionSlideTwo() {
     }, 3500);
 
     foot.addEventListener("click", function handleClick() {
-        if (clickHandled) return; // Если уже кликнули — ничего не делаем
-        clickHandled = true; // Устанавливаем флаг, чтобы больше не реагировать
+        if (clickHandled) alert("ЫЫЫЫЫЫЫЫЫЫЫЫ Я ДЕБИЛ ДУМАЮ ЕСЛИ МНОГО РАЗ НАЖАТЬ ТО ОНО ЗАРАБОТАЕТ ЫЫЫЫЫЫЫЫЫЫЫЫ");
+        clickHandled = true;
 
         setTimeout(() => {
             slideTwo.style.opacity = "0";
