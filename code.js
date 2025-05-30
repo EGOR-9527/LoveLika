@@ -144,7 +144,7 @@ async function actionSlideTwo() {
     }, 3500);
 
     foot.addEventListener("click", function handleClick() {
-        if (clickHandled) alert("ЫЫЫЫЫЫЫЫЫЫЫЫ Я ДЕБИЛ ДУМАЮ ЕСЛИ МНОГО РАЗ НАЖАТЬ ТО ОНО ЗАРАБОТАЕТ ЫЫЫЫЫЫЫЫЫЫЫЫ");
+        if (clickHandled) return
         clickHandled = true;
 
         setTimeout(() => {
