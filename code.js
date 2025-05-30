@@ -153,7 +153,9 @@ async function actionSlideTwo() {
             setTimeout(() => {
                 slideTwo.style.display = "none";
             }, 500);
-            actionSlideThree();
+            if(clickHandled === true) {
+                actionSlideThree();
+            }
         }, 500);
     });
 }
