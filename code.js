@@ -131,10 +131,9 @@ function typeText(element, text, startDelay = 0, perCharDelay = 55) {
     return startDelay + text.length * perCharDelay;
 }
 
-function actionSlideTwo() {
-    if (slideTwoStarted) return;
-    slideTwoStarted = true;
+let clickHandled = false;
 
+async function actionSlideTwo() {
     slideTwo.style.display = "flex";
     textSlideTwo.textContent = "";
 
@@ -144,12 +143,9 @@ function actionSlideTwo() {
         foot.style.opacity = "1";
     }, 3500);
 
-    const onClick = () => {
-        if (slideTwoClicked) return;
-        slideTwoClicked = true;
-
-        foot.removeEventListener("click", onClick);
-        foot.removeEventListener("touchend", onClick); // 👈 добавляем это
+    foot.addEventListener("click", function handleClick() {
+        if (clickHandled) return; // Если уже кликнули — ничего не делаем
+        clickHandled = true; // Устанавливаем флаг, чтобы больше не реагировать
 
         setTimeout(() => {
             slideTwo.style.opacity = "0";
@@ -159,10 +155,7 @@ function actionSlideTwo() {
             }, 500);
             actionSlideThree();
         }, 500);
-    };
-
-    foot.addEventListener("touchend", onClick); // 👈 добавляем это
-
+    });
 }
 
 
