@@ -785,16 +785,17 @@ function actionSlideEleven() {
 
 }
 
-
+let isEntered = false
 
 const input = document.getElementById("inputPassworld");
 
 slideOne.style.display = "flex";
 
-input.addEventListener("input",  () => {
+input.addEventListener("change",  () => {
     const value = input.value.trim();
 
-    if (value === onehash || value === twohash) {
+    if ( !isEntered && (value === onehash || value === twohash)) {
+        isEntered = true
         slideOne.style.opacity = "0";
         setTimeout(() => {
             slideOne.style.display = "none";
