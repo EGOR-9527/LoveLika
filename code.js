@@ -118,7 +118,7 @@ function typeText(element, textData, startDelay = 0, perCharDelay = 55) {
 
     for (let i = 0; i < textData.length; i++) {
         setTimeout(() => {
-            element.textContent = textData.slice(0, i);
+            element.textContent = textData.slice(0, i + 1);
         }, startDelay + i * perCharDelay);
     }
     return startDelay + textData.length * perCharDelay;
@@ -791,7 +791,7 @@ const input = document.getElementById("inputPassworld");
 
 slideOne.style.display = "flex";
 
-input.addEventListener("change",  () => {
+input.addEventListener("input",  () => {
     const value = input.value.trim();
 
     if ( !isEntered && (value === onehash || value === twohash)) {
