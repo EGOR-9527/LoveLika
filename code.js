@@ -1,7 +1,7 @@
 const onehash =
-    "e848f0a15a51ff12d35f60ee7d1f44fdd41b46fa04a66427a369bf4a351564d3";
+    "я рядом";
 const twohash =
-    "ab9ebc8b74469a10ebf19bf604f76c6c99b4be5896343b3a0893446454693f94";
+    "Я рядом";
 
 const text = [
     "Маленький мир, для моего котенка",
@@ -114,14 +114,6 @@ youMeWorld.style.opacity = "0";
 let slideTwoStarted = false; // глобально
 let slideTwoClicked = false; // глобально
 
-async function hashPassworld(password) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
-}
-
 function typeText(element, text, startDelay = 0, perCharDelay = 55) {
     for (let i = 0; i < text.length; i++) {
         setTimeout(() => {
@@ -133,7 +125,7 @@ function typeText(element, text, startDelay = 0, perCharDelay = 55) {
 
 let clickHandled = false;
 
-async function actionSlideTwo() {
+function actionSlideTwo() {
     slideTwo.style.display = "flex";
     textSlideTwo.textContent = "";
 
@@ -161,7 +153,7 @@ async function actionSlideTwo() {
 }
 
 
-async function actionSlideThree() {
+function actionSlideThree() {
     slideThree.style.display = "flex";
 
     textSlideOneThree.textContent = "";
@@ -213,7 +205,7 @@ async function actionSlideThree() {
     }, 18000);
 }
 
-async function actionSlideFour() {
+function actionSlideFour() {
     slideFour.style.display = "flex";
     loveCart.style.display = "flex";
 
@@ -279,7 +271,7 @@ async function actionSlideFour() {
 
 }
 
-async function actionSlideFive() {
+function actionSlideFive() {
     svgShadow.style.display = "flex";
     date.style.display = "flex";
     theFirstHearts.style.display = "flex";
@@ -372,7 +364,7 @@ async function actionSlideFive() {
 }
 
 
-async function actionSlideSix() {
+function actionSlideSix() {
     slideSix.style.display = "flex";
 
     butterfliesInTheStomach.style.display = "flex";
@@ -466,7 +458,7 @@ async function actionSlideSix() {
     }, 38000);
 }
 
-async function actionSlideEight() {
+function actionSlideEight() {
     const slideEight = document.querySelector(".slideEight");
     const listItemsSlideEight = slideEight.querySelectorAll("h1, img");
 
@@ -494,7 +486,7 @@ async function actionSlideEight() {
     }, 6000);
 }
 
-async function actionSlideEight() {
+function actionSlideEight() {
     slideNine.style.display = "flex"
     youMeWorld.style.filter = 'brightness(50%)';
     youMeWorld.style.display = "flex";
@@ -541,7 +533,7 @@ async function actionSlideEight() {
     }, 16000);
 }
 
-async function actionSlideTen() {
+function actionSlideTen() {
     slideTen.style.display = "flex"
     const delay = 0;
     const listItemsSlideTen = slideTen.querySelectorAll("img");
@@ -662,7 +654,7 @@ async function actionSlideTen() {
 
 }
 
-async function actionSlideEleven() {
+function actionSlideEleven() {
     slideEleven.style.display = "flex";
     starTop.style.display = "flex";
     starBottom.style.display = "flex";
@@ -793,24 +785,23 @@ async function actionSlideEleven() {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const input = document.getElementById("inputPassworld");
 
-    slideOne.style.display = "flex";
+const input = document.getElementById("inputPassworld");
 
-    input.addEventListener("input", async () => {
-        const value = input.value.trim();
-        const hashedValue = await hashPassworld(value);
+slideOne.style.display = "flex";
 
-        if (hashedValue === onehash || hashedValue === twohash) {
-            slideOne.style.opacity = "0";
-            setTimeout(() => {
-                slideOne.style.display = "none";
-            }, 500);
+input.addEventListener("input",  () => {
+    const value = input.value.trim();
 
-            setTimeout(() => {
-                actionSlideTwo();
-            }, 1000);
-        }
-    });
+    if (value === onehash || value === twohash) {
+        slideOne.style.opacity = "0";
+        setTimeout(() => {
+            slideOne.style.display = "none";
+        }, 500);
+
+        setTimeout(() => {
+            actionSlideTwo();
+        }, 1000);
+    }
 });
+
