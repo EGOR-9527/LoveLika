@@ -114,13 +114,14 @@ youMeWorld.style.opacity = "0";
 let slideTwoStarted = false; // глобально
 let slideTwoClicked = false; // глобально
 
-function typeText(element, text, startDelay = 0, perCharDelay = 55) {
-    for (let i = 0; i < text.length; i++) {
+function typeText(element, textData, startDelay = 0, perCharDelay = 55) {
+
+    for (let i = 0; i < textData.length; i++) {
         setTimeout(() => {
-            element.textContent += text[i];
+            element.textContent = textData.slice(0, i);
         }, startDelay + i * perCharDelay);
     }
-    return startDelay + text.length * perCharDelay;
+    return startDelay + textData.length * perCharDelay;
 }
 
 let clickHandled = false;
